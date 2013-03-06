@@ -1,0 +1,26 @@
+{
+                    
+    "name"          : "atropa-jsformatter",
+    "version"       : "0.1.0",
+    "main"          : "./atropa-jsformatter.js",
+    "description"   : "A node module to pretty print JavaScript source code.",
+    "keywords"      : ["prettify", "formatter", "beautifier", "jsformatter", "utilities", "atropa"],
+    "homepage"      : "https://github.com/matthewkastor/atropa-jsformatter/",
+    "bugs"          : "https://github.com/matthewkastor/atropa-jsformatter/issues",
+    "author"        : {
+                        "name"      : "Matthew Kastor",
+                        "email"     : "matthewkastor@gmail.com",
+                        "url"       : "https://plus.google.com/100898583798552211130"
+    },
+    "repository"    : {
+                        "type"      : "git",
+                        "url"       : "git://github.com/matthewkastor/atropa-jsformatter.git"
+    },
+    "engines"       : {
+                        "node"      : ">=0.8.14"
+    },
+    "dependencies": {
+                        "escodegen" : *,
+                        "esprima"   : *
+    }
+}
