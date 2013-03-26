@@ -1,7 +1,7 @@
 {
                     
     "name"          : "atropa-jsformatter",
-    "version"       : "0.1.0-3",
+    "version"       : "0.1.1",
     "main"          : "./atropa-jsformatter.js",
     "description"   : "A node module to pretty print JavaScript source code.",
     "keywords"      : ["prettify", "formatter", "beautifier", "jsformatter", "utilities", "atropa"],
@@ -22,5 +22,8 @@
     "dependencies": {
                         "escodegen" : "*",
                         "esprima"   : "*"
+    },
+    "browser" : {
+        "./core wrappers/os.js" : "./core wrappers/bos.js"
     }
 }
