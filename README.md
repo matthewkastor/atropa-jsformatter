@@ -6,7 +6,7 @@ It's as simple as:
 ```
 var formatter, fs, source, out;
 
-formatter = require('./atropa-jsformatter.js');
+formatter = require('atropa-jsformatter');
 fs = require('fs');
 
 
