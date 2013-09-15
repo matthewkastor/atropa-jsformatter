@@ -12,12 +12,10 @@
  *  escodegen.
  * @param {Object} esprimaOptions Optional. Use different settings for
  *  esprima.
- * @see <a href="http://esprima.org/doc/">http://esprima.org/doc/</a>
- * @see <a href="https://github.com/Constellation/escodegen/wiki/API">
- *  https://github.com/Constellation/escodegen/wiki/API</a>
- * @requires esprima
- * @requires escodegen
- * @requires os
+ * @requires <a href="http://esprima.org/doc/">esprima</a>
+ * @requires <a href="https://github.com/Constellation/escodegen/wiki/API">
+ *  escodegen</a>
+ * @requires <a href="http://nodejs.org/api/os.html">os</a>
  * @example
  *  var formatter = require('atropa-jsformatter');
  *  var out = formatter('function wobble() { return "flam"; }');
