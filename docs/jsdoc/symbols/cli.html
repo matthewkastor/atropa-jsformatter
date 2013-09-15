@@ -5,7 +5,7 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="generator" content="JsDoc Toolkit" />
 		
-		<title>JsDoc Reference - _global_</title>
+		<title>JsDoc Reference - cli</title>
 
 		<style type="text/css">
 			/* default.css */
@@ -202,7 +202,7 @@ ul.inheritsList
 <!-- ============================== class title ============================ -->
 			<h1 class="classTitle">
 				
-				Built-In Namespace _global_
+				Namespace cli
 			</h1>
 
 <!-- ============================== class summary ========================== -->			
@@ -210,12 +210,35 @@ ul.inheritsList
 				
 				
 			
+				cli functions
 				
 				
+					<br /><i>Defined in: </i> <a href="../symbols/src/C__Users_kastor_Documents_GitHub_atropa-jsformatter_src_cli.js.html">cli.js</a>.
 				
 			</p>
 
 <!-- ============================== constructor summary ==================== -->			
+			
+			<table class="summaryTable" cellspacing="0" summary="A summary of the constructor documented in the class cli.">
+				<caption>Namespace Summary</caption>
+				<thead>
+					<tr>
+						<th scope="col">Constructor Attributes</th>
+						<th scope="col">Constructor Name and Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="attributes">&nbsp;</td>
+						<td class="nameDescription" >
+							<div class="fixedFont">
+								<b><a href="../symbols/cli.html#constructor">cli</a></b>
+							</div>
+							<div class="description">cli functions</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
 			
 
 <!-- ============================== properties summary ===================== -->
@@ -225,7 +248,7 @@ ul.inheritsList
 			
 				
 				
-				<table class="summaryTable" cellspacing="0" summary="A summary of the methods documented in the class _global_.">
+				<table class="summaryTable" cellspacing="0" summary="A summary of the methods documented in the class cli.">
 					<caption>Method Summary</caption>
 					<thead>
 						<tr>
@@ -236,11 +259,20 @@ ul.inheritsList
 					<tbody>
 					
 						<tr>
-							<td class="attributes">&nbsp;</td>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont"><b><a href="../symbols/_global_.html#formatJs">formatJs</a></b>(source, escodegenOptions, esprimaOptions)
+								<div class="fixedFont">cli.<b><a href="../symbols/cli.html#.main">main</a></b>(opts)
 								</div>
-								<div class="description">Pretty prints javaScript using esprima and escodegen.</div>
+								<div class="description">main function called when script is accessed through the command line.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;private&gt; &lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">cli.<b><a href="../symbols/cli.html#.readin">readin</a></b>(cb)
+								</div>
+								<div class="description">Reads from stdin and calls the callback on the data received.</div>
 							</td>
 						</tr>
 					
@@ -255,6 +287,33 @@ ul.inheritsList
 
 <!-- ============================== constructor details ==================== -->		
 			
+			<div class="details"><a name="constructor"> </a>
+				<div class="sectionTitle">
+					Namespace Detail
+				</div>
+				
+				<div class="fixedFont">
+						<b>cli</b>
+				</div>
+				
+				<div class="description">
+					cli functions
+					
+				</div>
+				
+				
+				
+				
+					
+					
+					
+					
+					
+					
+					
+
+			</div>
+			
 
 <!-- ============================== field details ========================== -->		
 			
@@ -265,25 +324,18 @@ ul.inheritsList
 					Method Detail
 				</div>
 				
-					<a name="formatJs"> </a>
-					<div class="fixedFont">
+					<a name=".main"> </a>
+					<div class="fixedFont">&lt;static&gt; 
 					
 					
-					<b>formatJs</b>(source, escodegenOptions, esprimaOptions)
+					<span class="light">cli.</span><b>main</b>(opts)
 					
 					</div>
 					<div class="description">
-						Pretty prints javaScript using esprima and escodegen. Line endings will be converted to the value stored in os.EOL
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/C__Users_kastor_Documents_GitHub_atropa-jsformatter_src_atropa-jsformatter.js.html">atropa-jsformatter.js</a>.
+						main function called when script is accessed through the command line.
 						
 						
 					</div>
-					
-					
-					
-					<pre class="code"> var formatter = require('atropa-jsformatter'); var out = formatter('function wobble() { return "flam"; }'); console.log(out);</pre>
 					
 					
 					
@@ -292,22 +344,22 @@ ul.inheritsList
 							<dt class="heading">Parameters:</dt>
 							
 								<dt>
-									<span class="light fixedFont">{String}</span> <b>source</b>
+									<span class="light fixedFont">{Object}</span> <b>opts</b>
 									
 								</dt>
-								<dd>The source code to prettify.</dd>
+								<dd>Options object.</dd>
 							
 								<dt>
-									<span class="light fixedFont">{Object}</span> <b>escodegenOptions</b>
-									
+									<span class="light fixedFont">{String}</span> <b>opts.infile</b>
+									<i>Optional, Default: stdin</i>
 								</dt>
-								<dd>Optional. Use different settings for escodegen.</dd>
+								<dd>The name of the file to be read, also accepts from stdin.</dd>
 							
 								<dt>
-									<span class="light fixedFont">{Object}</span> <b>esprimaOptions</b>
-									
+									<span class="light fixedFont">{String}</span> <b>opts.outfile</b>
+									<i>Optional, Default: stdout</i>
 								</dt>
-								<dd>Optional. Use different settings for esprima.</dd>
+								<dd>The name of the file to write results to</dd>
 							
 							</dl>
 						
@@ -315,17 +367,42 @@ ul.inheritsList
 						
 						
 						
+						
+						
+
+					<hr />
+				
+					<a name=".readin"> </a>
+					<div class="fixedFont">&lt;private&gt; &lt;static&gt; 
+					
+					
+					<span class="light">cli.</span><b>readin</b>(cb)
+					
+					</div>
+					<div class="description">
+						Reads from stdin and calls the callback on the data received.
+						
+						
+					</div>
+					
+					
+					
 						
 							<dl class="detailList">
-							<dt class="heading">Requires:</dt>
+							<dt class="heading">Parameters:</dt>
 							
-								<dd><a href="http://esprima.org/doc/">esprima</a></dd>
-							
-								<dd><a href="https://github.com/Constellation/escodegen/wiki/API"> escodegen</a></dd>
-							
-								<dd><a href="http://nodejs.org/api/os.html">os</a></dd>
+								<dt>
+									<span class="light fixedFont">{Function}</span> <b>cb</b>
+									
+								</dt>
+								<dd>The callback function to execute on the received data.</dd>
 							
 							</dl>
+						
+						
+						
+						
+						
 						
 						
 
