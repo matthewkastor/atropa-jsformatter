@@ -11,7 +11,12 @@
  */
 var cli = {
     /**
-     * 
+     * main function called when script is accessed through the command line.
+     * @param {Object} opts Options object.
+     * @param {String} [opts.infile=stdin] The name of the file to be read,
+     *  also accepts from stdin.
+     * @param {String} [opts.outfile=stdout] The name of the file to write
+     *  results to
      */
     main : function main (opts) {
         "use strict";
@@ -19,7 +24,30 @@ var cli = {
             if (err) {
                 throw err;
             } 
-            cli.formatjs(outfile, source);
+            formatjs(outfile, source);
+        }
+        function formatjs (outfile, source, cb) {
+            "use strict";
+            cb = cb || function () {
+                return null;
+            };
+            function fWriteCb (cb, err, data) {
+                if (err) {
+                    throw err;
+                }
+                cb(data);
+            }
+            var out = require('./atropa-jsformatter.js')(source);
+            if(outfile) {
+                require('fs').writeFile(
+                    require('path').resolve(outfile),
+                    out,
+                    {encoding: 'utf8'},
+                    fWriteCb.bind(null, cb)
+                );
+            } else {
+                console.log(out);
+            }
         }
         var read = fReadCb.bind(null, opts.outfile);
         if(opts.infile) {
@@ -29,31 +57,8 @@ var cli = {
                 read
             );
         } else {
-            var format = cli.formatjs.bind(null, opts.outfile);
+            var format = formatjs.bind(null, opts.outfile);
             cli.readin(format);
-        }
-    },
-    formatjs : function formatjs (outfile, source, cb) {
-        "use strict";
-        cb = cb || function () {
-            return null;
-        };
-        function fWriteCb (cb, err, data) {
-            if (err) {
-                throw err;
-            }
-            cb(data);
-        }
-        var out = require('./atropa-jsformatter.js')(source);
-        if(outfile) {
-            require('fs').writeFile(
-                require('path').resolve(outfile),
-                out,
-                {encoding: 'utf8'},
-                fWriteCb.bind(null, cb)
-            );
-        } else {
-            console.log(out);
         }
     },
     /**
