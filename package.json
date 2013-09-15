@@ -25,5 +25,6 @@
     },
     "browser" : {
         "./core wrappers/os.js" : "./core wrappers/bos.js"
-    }
+    },
+    "bin" : "./src/cli.js"
 }
