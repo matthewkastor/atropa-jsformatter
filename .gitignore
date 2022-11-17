@@ -12,3 +12,4 @@ Desktop.ini
 
 /.vs
 /package-lock.json
+/node_modules
